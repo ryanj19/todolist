@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="https://cdn3.emoji.gg/emojis/3524-pompomhearteyes.png">
+
+    <title>૮・ﻌ・ა To-do List</title>
+    <style>
+
+    ::-webkit-scrollbar {
+        width: 18px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #fff8cf;
+        border-left: 2px solid #6b5200;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #f2c94c;
+        border: 3px solid #fff8cf;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #e8b92e;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #fff8d6;
+        min-height: 100vh;
+        display: grid;
+        grid-template-rows: 35px 1fr;
+        padding: 0 10px;
+        overflow-x: hidden;
+    }
+
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: #c7f2f8;
+        z-index: -1;
+    }
+
+    /* ETO MGA NASA TAAS */
+
+    .navbar {
+        width: 120%;
+        margin-left: -10%;
+        align-items: center;
+        justify-content: center;
+        background-color: #fdc97d;
+        border: 2px #614238 solid;
+        padding: 6px 5px;
+        position: relative;
+        z-index: 2;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    nav a {
+        display: inline;
+        justify-content: center;
+        align-items: center;
+        margin-left: 27px;
+        margin: 5px;
+        text-decoration: none;
+        padding: 17px;
+        color: #614238;
+        background-color: #fdc97d;
+        border-radius: 9em;
+        font-weight: bolder;
+        height: fit-content;
+        width: fit-content;
+    }
+
+    nav a:hover {
+        background-color: #fdcf8a;
+    }
+
+    nav a:active {
+        background-color: #ffd391;
+    }
+
+    #a {
+        position: relative; 
+        margin-top: 70px;
+    }
+
+    #home {
+        background: #c7f2f8;
+        width: 100vw;
+        height: 78px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    #eyy {
+        position: absolute;
+        width: 130px;
+        height: auto;
+        right: -25px;
+        top: -44.822px;
+        mix-blend-mode: normal;
+        z-index: 3;
+    }
+
+    #clouds {
+        width: 100px;
+        height: auto;
+        position: absolute;
+        right: 84px;
+        top: 7px;
+        z-index: 999; 
+    }
+
+    #clouds2 {
+        transform: scaleX(-1);
+        width: 70px;
+        height: auto;
+        z-index: 999;
+        display: flex;
+        position: absolute;
+        margin-left: -10px;
+    }
+
+    #clouds3{
+        width: 110px;
+        height: auto;
+        display: flex;
+        position: absolute;
+        z-index: 9999;
+        left: 65px;
+        top: 10px;
+    }
+
+        /* MGA NASA PAGE 1 */
+
+    .sched {
+        width: 320px;
+        height: auto;
+        overflow: hidden;
+        display: flex;
+    }
+
+    .sched img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        transition: transform 0.3s ease;
+        transform-origin: 79% center;
+        margin: 20px auto;
+        border-radius: 1em;
+    }
+
+    .sched.zoomed img {
+        transform: scale(1.39);
+        border-radius: 0;
+    }   
+
+    .ilan {
+        border: 2px #6b5200 solid;
+        text-align: center;
+        margin: 0 auto;
+        font-size: 8.67px;
+        background-position: center;
+        z-index: 999;
+        background-color:#fff8d6;
+        table-layout: fixed;
+        width: 99%;
+        
+    }
+
+    .ilan tr,
+    .ilan th {
+        text-align: center;
+        padding: 14px;
+        font-weight: bolder;
+    }
+
+    #galit{
+        width: auto;
+        height: 150px;
+        display: block;
+        position: relative;
+        right: 9px;
+        margin-bottom: -64.5px;
+        mix-blend-mode: normal;
+    }
+
+    #f1{
+        text-align: left;
+        font-size: 12px;
+        background-image: url(https://pbs.twimg.com/media/EzbrKvhX0AIEREq.jpg);
+        background-position: right;
+        background-size: 85px;
+        background-repeat:no-repeat;
+        background-color:#fffdf0;
+    }
+
+    #o {
+        font-size: 12px;
+        background-image: url(https://secretsurpriseshop.com/cdn/shop/collections/IMG_2102.jpg?v=1596833937&width=750);
+        background-position: right;
+        background-size: 55px;
+        background-repeat:no-repeat;
+        background-color:#fbf8e2;
+        mix-blend-mode: multiply;
+    }
+
+    #page1{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
+    .ilan td {
+        min-width: 100px;
+        min-height: 50px;
+        padding: 8px;
+        vertical-align: top;
+    }
+
+    .table-task {
+        background: #fff8cf;
+        border: 1px solid #f0d66a;
+        border-radius: 6px;
+        padding: 5px;
+        margin: 3px;
+        font-size: 10px;
+    }
+
+    .table-task strong {
+        color: #6b5200;
+    }
+
+    .table-task small {
+        display: block;
+        color: #806f30;
+        margin-top: 3px;
+    }
+
+    .none {
+        color: #a99b63;
+        font-style: italic;
+        font-size: 10px;
+    }
+
+    #gutom {
+        width: auto;
+        height: 50px;
+        display: flex;
+        position: relative;
+        left: 250px;
+        margin-bottom: -50px;
+    }
+
+    #galit2 {
+        width: auto;
+        height: 50px;
+        mix-blend-mode: multiply;
+        float: right;
+    }
+
+    #talsik {
+        width: auto;
+        height: 50px;
+        float: left;
+    }
+
+    #cl {
+        width: auto;
+        height: 50px;
+        margin-top: 10px;
+        mix-blend-mode: multiply;
+    }
+
+    #st {
+        width: auto;
+        height: 80px;
+        mix-blend-mode: multiply;
+    }
+
+    #tc {
+        width: auto;
+        height: 45px;
+    }
+
+    #h {
+        width: auto;
+        height: 60px;
+    }
+
+
+    /* ETO NAMAN UNG MGA NASA TODOLIST EHEYYYY*/
+
+    #todo {
+        width: 100%;
+        display: none;
+        position: relative;
+        top: 0;
+        padding-bottom: 30px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .todo-container {
+        background: #fffdf0;
+        width: 300px;
+        padding: 18px;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(180, 140, 0, 0.15);
+        margin-top: 30px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 15px;
+        font-size: 24px;
+        color: #6b5200;
+    }
+
+    .inputarea {
+        display: flex;
+        gap: 7px;
+    }
+
+    input {
+        flex: 1;
+        padding: 9px;
+        border: 1px solid #f8d951;
+        border-radius: 7px;
+        font-size: 14px;
+        background: white;
+        margin-bottom: 6px;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: #d0aa00;
+        box-shadow: 0 0 1px 1px #e1bb32;
+    }
+
+    #add {
+        padding: 9px 13px;
+        border: none;
+        border-radius: 7px;
+        background: #f2c94c;
+        color: #5c4600;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: bold;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-top: 8px;
+    }
+
+    #add:hover {
+        background: #e8b92e;
+    }
+
+    #add:active,
+    #add.active {
+        background: #d6a600;
+        transform: translateY(2px);
+    }
+
+    #tl {
+        list-style: none;
+        margin-top: 15px;
+        padding: 0;
+        width: 100%;
+    }
+
+    li {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 9px;
+        margin-bottom: 7px;
+        background: #fff8cf;
+        border: 1px solid #f0d66a;
+        border-radius: 7px;
+        font-size: 14px;
+    }
+
+    .task-info {
+        flex: 1;
+        min-width: 0;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .task-info strong {
+        display: block;
+        color: #6b5200;
+        display: block;
+        overflow-wrap: anywhere;
+    }
+
+    .task-info small {
+        display: block;
+        color: #806f30;
+        margin-top: 6px;
+    }
+
+    .del {
+        padding: 6px 9px;
+        border: none;
+        border-radius: 5px;
+        background: #e6b800;
+        color: white;
+        cursor: pointer;
+    }
+
+    .del:hover {
+        background: #c99f00;
+    }
+
+    select {
+        width: 100%;
+        padding: 9px;
+        border: 1px solid #f8d951;
+        border-radius: 7px;
+        font-size: 14px;
+        background: white;
+        color: #5c4a00;
+        margin-bottom: 7px;
+    }
+
+    select:focus {
+        outline: none;
+        border-color: #d0aa00;
+        box-shadow: 0 0 1px 1px #e1bb32;
+    }
+
+    #squishy {
+        margin: 0 auto;
+        display: flex;
+        margin-top: 30px;
+    }
+
+</style>
+</head>
+<body>
+
+    <div id="home"></div>
+
+    <img
+    id="clouds"
+    src="./cloud.png"
+    >
+
+    <img
+    id="clouds2"
+    src="./clouds2.png"
+    >
+
+    <img
+    id="clouds3"
+    src="./clouds3.png"
+    >
+
+        <section id="a">
+
+            <img
+                id="eyy"
+                src="https://i.pinimg.com/736x/40/d0/13/40d0134535cfe123efa7dc23d7e51204.jpg"
+                onclick="showRandomTitle(this)"
+                >
+
+            <header class="navbar">
+
+                <nav>
+                    <a id="btn1" href="#home">Home</a>
+                    <a id="btn2" href="#todo">To-Do</a>
+                    <a href="https://open.spotify.com/">Spotify</a>
+                </nav>
+
+            </header>
+    <div id="page1">
+            <div class="sched">
+            <img
+                id="sched"
+                src="./sched.jpg?v=1"
+                >
+            </div>
+
+            <img
+            id="gutom"
+            src="https://cdn3.emoji.gg/emojis/5015-pompomeat.png"
+            >
+
+            <img 
+            src="./galit.gif"
+            id="galit"
+            >
+
+        <table class="ilan" border="1">
+
+            <tr>
+                <th colspan="3" id="f1">FILIPINO 1</th>
+                <th colspan="3" id="o">OTHERS</th>
+            </tr>
+
+            <tr>
+                <td colspan="3" id="f"></td>
+                <td colspan="3" id="other"></td>
+            </tr>
+
+            <tr>    
+                <th colspan="2">
+                    <img
+                    id="h"
+                    src="https://static.wikia.nocookie.net/hellokitty/images/6/6e/Pompompurin2021ranking.png/revision/latest/scale-to-width-down/570?cb=20251026210919"
+                    >
+                    KASAYSAYAN
+                </th>
+                <th colspan="2">
+                    <img
+                    id="tc"
+                    src="https://i.pinimg.com/736x/66/eb/22/66eb22c117d2126bc21936ea925b34ea.jpg"
+                    >
+                    <br>
+                    EFFECTIVE
+                    <br>
+                    COMMUNICATION
+                </th>
+                <th colspan="2">
+                    <img
+                    id="talsik"
+                    src="https://media.tenor.com/cZBSaowouvkAAAAj/pompompurin-sanrio.gif"
+                    >
+                    <br>
+                    MABISANG
+                    <br>
+                    KOMUNIKASYON
+                </th>
+            </tr>    
+            
+            <tr>
+                <td colspan="2" id="k"></td>
+                <td colspan="2" id="ec"></td>
+                <td colspan="2" id="mb"></td>
+            </tr>
+
+            <tr>
+                <th colspan="2">
+                    LIFE SKILLS
+                    <br>
+                    <img
+                    id="cl"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjEq766ZwT_QB8I91NL3V-yk9FlDUAmDvej1K3_ALktL6A_ky1fNnw5xQ&s=10"
+                    >
+                </th>
+                <th colspan="2">
+                    GENERAL
+                    <br>
+                    SCIENCE
+                    <br>
+                    <img
+                    id="st"
+                    src="https://i.pinimg.com/236x/07/f8/65/07f865308b222f0008effe680e7ff2dd.jpg"
+                    >
+                </th>
+                <th colspan="2">
+                    GENERAL
+                    <br>
+                    MATHEMATICS
+                    <br>
+                    <img 
+                    id="galit2"
+                    src="https://i.pinimg.com/1200x/93/cb/5d/93cb5d8ee394dc93c6c097cb5f836c93.jpg"
+                    >
+                </th>
+            </tr>
+
+            <tr>
+                <td colspan="2" id="ls"></td>
+                <td colspan="2" id="gs"></td>
+                <td colspan="2" id="gm"></td>
+            </tr>
+            
+        </table>
+
+        <img 
+        src="./cry.gif"
+        style="margin: 0 auto;"
+        >
+
+    </div>
+            
+            <main id="todo">
+
+                <div class="todo-container">
+
+
+                    <h1>My To-Do List</h1>
+
+                    <select id="subject">
+                        <option value="" disabled selected hidden>Select Subjects</option>
+                        <option value="Filipino 1">Filipino 1</option>
+                        <option value="Kasaysayan">Kasaysayan</option>
+                        <option value="Effective Communication">Effective Communication</option>
+                        <option value="Mabisang Komunikasyon">Mabisang Komunikasyon</option>
+                        <option value="Life Skills">Life Skills</option>
+                        <option value="General Science">General Science</option>
+                        <option value="General Mathematics">General Mathematics</option>
+                        <option value="Others">Others</option>
+                    </select>
+
+                    <input
+                        type="text"
+                        id="ti"
+                        placeholder="Enter a task..."
+                    >
+
+                    <button id="add">Add Task</button>
+
+                    <ul id="tl"></ul>
+                </div>
+                    
+            <img 
+            id="squishy"
+            src="./squishy.png"
+            >
+
+            </main>
+
+        </section>
+<script>
+
+    const ti = document.getElementById("ti");
+    const add = document.getElementById("add");
+
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+    function save() {
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+
+    add.addEventListener("click", addTask);
+
+    function addTask() {
+
+        const subject =
+            document.getElementById("subject").value;
+
+        const text =
+            ti.value.trim();
+
+        if (
+            subject === "" ||
+            text === ""
+        ) {
+            alert("Please complete all fields.");
+            return;
+        }
+
+        tasks.push({
+            subject: subject,
+            text: text,
+            completed: false
+        });
+
+        save();
+
+        document.getElementById("subject").value = "";
+        ti.value = "";
+
+        updateTable();
+        displayTasks();
+    }
+
+    function displayTasks() {
+
+        const tl = document.getElementById("tl");
+
+        tl.innerHTML = "";
+
+        tasks.forEach((task, index) => {
+
+            const li = document.createElement("li");
+
+            li.innerHTML = `
+                <div class="task-info">
+                    <strong>${task.text}</strong>
+                    <small>📚 ${task.subject}</small>
+
+                </div>
+
+                <button class="del">Delete</button>
+            `;
+
+            const deleteButton =
+                li.querySelector(".del");
+
+            deleteButton.addEventListener("click", function () {
+
+                tasks.splice(index, 1);
+
+                save();
+
+                displayTasks();
+                updateTable();
+            });
+
+            tl.appendChild(li);
+        });
+    }
+
+    function updateTable() {
+
+        const cells = {
+
+            "Filipino 1":
+                document.getElementById("f"),
+
+            "Kasaysayan":
+                document.getElementById("k"),
+
+            "Effective Communication":
+                document.getElementById("ec"),
+
+            "Mabisang Komunikasyon":
+                document.getElementById("mb"),
+
+            "Life Skills":
+                document.getElementById("ls"),
+
+            "General Science":
+                document.getElementById("gs"),
+
+            "General Mathematics":
+                document.getElementById("gm"),
+            "Others":
+                document.getElementById("other")
+        };
+
+        Object.values(cells).forEach(cell => {
+
+            cell.innerHTML =
+                `<span class="none">None</span>`;
+
+        });
+
+        tasks.forEach(task => {
+
+            const cell = cells[task.subject];
+
+            if (!cell) return;
+
+            if (cell.querySelector(".none")) {
+                cell.innerHTML = "";
+            }
+
+            const taskDiv =
+                document.createElement("div");
+
+            taskDiv.classList.add("table-task");
+
+            taskDiv.innerHTML = `
+                <strong>${task.text}</strong>
+            `;
+
+            cell.appendChild(taskDiv);
+
+        });
+    }
+
+    const page1 =
+        document.getElementById("page1");
+
+    const page2 =
+        document.getElementById("todo");
+
+    const btn1 =
+        document.getElementById("btn1");
+
+    const btn2 =
+        document.getElementById("btn2");
+
+    btn1.addEventListener(
+        "click",
+        function(event) {
+
+            event.preventDefault();
+
+            page2.style.display = "none";
+
+            page1.style.display = "flex";
+
+        }
+    );
+
+
+    btn2.addEventListener(
+        "click",
+        function(event) {
+
+            event.preventDefault();
+
+            page1.style.display = "none";
+
+            page2.style.display = "flex";
+
+        }
+    );
+
+    function showRandomTitle(element) {
+
+        const titles = [
+            "GOOO YOU CAN DO IT!!!!",
+            "Hello there!",
+            "Ansipag mo naman yah",
+            "Bolaga!",
+            "Listen to spotify while studying it helps!",
+            "Kaya mo yan boii",
+            "Gangsta",
+            "Let's eat pudding",
+            "YOOOOOOOOOOWWWWWWWWW",
+            "Palo magaaral ulit",
+            "ano na sah",
+            "simulan mo na dapat mong simulan boi",
+        ];
+
+        const randomIndex =
+            Math.floor(
+                Math.random() * titles.length
+            );
+
+        alert("Pompompurin says: " + titles[randomIndex]);
+    }
+
+    const sched = document.querySelector(".sched");
+
+    sched.addEventListener("click", function() {
+        sched.classList.toggle("zoomed");
+    });
+
+
+
+    updateTable();
+    displayTasks();
+
+
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./offline.js")
+            .then((registration) => {
+                console.log("Service Worker registered!", registration.scope);
+            })
+            .catch((error) => {
+                console.error("Service Worker registration failed:", error);
+            });
+    });
+}
+</script>
+</body>
+</html>
