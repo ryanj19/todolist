@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="icon" href="https://cdn3.emoji.gg/emojis/3524-pompomhearteyes.png">
 
     <title>૮・ﻌ・ა To-do List</title>
+
     <style>
 
     ::-webkit-scrollbar {
@@ -101,7 +104,7 @@
     }
 
     #a {
-        position: relative; 
+        position: relative;
         margin-top: 70px;
     }
 
@@ -134,7 +137,7 @@
         position: absolute;
         right: 84px;
         top: 7px;
-        z-index: 999; 
+        z-index: 999;
     }
 
     #clouds2 {
@@ -147,7 +150,7 @@
         margin-left: -10px;
     }
 
-    #clouds3{
+    #clouds3 {
         width: 110px;
         height: auto;
         display: flex;
@@ -157,7 +160,7 @@
         top: 10px;
     }
 
-        /* MGA NASA PAGE 1 */
+    /* PAGE 1 */
 
     .sched {
         width: 320px;
@@ -170,7 +173,7 @@
     .sched img {
         width: 100%;
         height: 100%;
-        object-fit: cover; 
+        object-fit: cover;
         transition: transform 0.3s ease;
         transform-origin: 79% center;
         margin: 20px auto;
@@ -181,7 +184,7 @@
     .sched.zoomed img {
         transform: scale(1.39);
         border-radius: 0;
-    }   
+    }
 
     .ilan {
         border: 2px #6b5200 solid;
@@ -190,10 +193,9 @@
         font-size: 8.67px;
         background-position: center;
         z-index: 999;
-        background-color:#fff8d6;
+        background-color: #fff8d6;
         table-layout: fixed;
         width: 99%;
-        
     }
 
     .ilan tr,
@@ -203,7 +205,7 @@
         font-weight: bolder;
     }
 
-    #galit{
+    #galit {
         width: auto;
         height: 150px;
         display: block;
@@ -213,14 +215,14 @@
         mix-blend-mode: normal;
     }
 
-    #f1{
+    #f1 {
         text-align: left;
         font-size: 12px;
         background-image: url(https://pbs.twimg.com/media/EzbrKvhX0AIEREq.jpg);
         background-position: right;
         background-size: 85px;
-        background-repeat:no-repeat;
-        background-color:#fffdf0;
+        background-repeat: no-repeat;
+        background-color: #fffdf0;
     }
 
     #o {
@@ -228,12 +230,12 @@
         background-image: url(https://secretsurpriseshop.com/cdn/shop/collections/IMG_2102.jpg?v=1596833937&width=750);
         background-position: right;
         background-size: 55px;
-        background-repeat:no-repeat;
-        background-color:#fbf8e2;
+        background-repeat: no-repeat;
+        background-color: #fbf8e2;
         mix-blend-mode: multiply;
     }
 
-    #page1{
+    #page1 {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -318,8 +320,7 @@
         height: 60px;
     }
 
-
-    /* ETO NAMAN UNG MGA NASA TODOLIST EHEYYYY*/
+    /* TO-DO LIST */
 
     #todo {
         width: 100%;
@@ -367,6 +368,15 @@
         outline: none;
         border-color: #d0aa00;
         box-shadow: 0 0 1px 1px #e1bb32;
+    }
+
+    .datetime {
+        display: flex;
+        gap: 7px;
+    }
+
+    .datetime input {
+        width: 50%;
     }
 
     #add {
@@ -422,7 +432,6 @@
     .task-info strong {
         display: block;
         color: #6b5200;
-        display: block;
         overflow-wrap: anywhere;
     }
 
@@ -468,200 +477,264 @@
         margin-top: 30px;
     }
 
-</style>
+    </style>
 </head>
+
 <body>
 
     <div id="home"></div>
-
     <img
-    id="clouds"
-    src="./cloud.png"
-    >
-
+        id="clouds"
+        src="./cloud.png"
+        >
     <img
-    id="clouds2"
-    src="./clouds2.png"
-    >
-
+        id="clouds2"
+        src="./clouds2.png"
+        >
     <img
-    id="clouds3"
-    src="./clouds3.png"
-    >
+        id="clouds3"
+        src="./clouds3.png"
+        >
+    <section id="a">
+        <img
+            id="eyy"
+            src="https://i.pinimg.com/736x/40/d0/13/40d0134535cfe123efa7dc23d7e51204.jpg"
+            onclick="showRandomTitle(this)"
+            >
+        <header class="navbar">
+            <nav>
+                <a id="btn1" href="#home">Home</a>
+                <a id="btn2" href="#todo">To-Do</a>
+                <a href="https://open.spotify.com/">Spotify</a>
+            </nav>
 
-        <section id="a">
+        </header>
 
-            <img
-                id="eyy"
-                src="https://i.pinimg.com/736x/40/d0/13/40d0134535cfe123efa7dc23d7e51204.jpg"
-                onclick="showRandomTitle(this)"
-                >
-
-            <header class="navbar">
-
-                <nav>
-                    <a id="btn1" href="#home">Home</a>
-                    <a id="btn2" href="#todo">To-Do</a>
-                    <a href="https://open.spotify.com/">Spotify</a>
-                </nav>
-
-            </header>
-    <div id="page1">
+        <div id="page1">
             <div class="sched">
-            <img
-                id="sched"
-                src="./sched.jpg?v=1"
+                <img
+                    id="sched"
+                    src="./sched.jpg?v=1"
                 >
             </div>
 
             <img
-            id="gutom"
-            src="https://cdn3.emoji.gg/emojis/5015-pompomeat.png"
+                id="gutom"
+                src="https://cdn3.emoji.gg/emojis/5015-pompomeat.png"
+            >
+            <img
+                src="./galit.gif"
+                id="galit"
+            >
+            <table class="ilan" border="1">
+
+                <tr>
+                    <th colspan="3" id="f1">
+                        FILIPINO 1
+                    </th>
+                    <th colspan="3" id="o">
+                        OTHERS
+                    </th>
+                </tr>
+
+                <tr>
+                    <td colspan="3" id="f"></td>
+                    <td colspan="3" id="other"></td>
+                </tr>
+
+                <tr>
+                    <th colspan="2">
+                        <img
+                            id="h"
+                            src="https://static.wikia.nocookie.net/hellokitty/images/6/6e/Pompompurin2021ranking.png/revision/latest/scale-to-width-down/570?cb=20251026210919"
+                        >
+                        KASAYSAYAN
+                    </th>
+                    
+                    <th colspan="2">
+                        <img
+                            id="tc"
+                            src="https://i.pinimg.com/736x/66/eb/22/66eb22c117d2126bc21936ea925b34ea.jpg"
+                        >
+                        <br>
+                        EFFECTIVE
+                        <br>
+                        COMMUNICATION
+                    </th>
+                    <th colspan="2">
+
+                        <img
+                            id="talsik"
+                            src="https://media.tenor.com/cZBSaowouvkAAAAj/pompompurin-sanrio.gif"
+                        >
+                        <br>
+                        MABISANG
+                        <br>
+                        KOMUNIKASYON
+                    </th>
+                    
+                </tr>
+
+                <tr>
+                    <td colspan="2" id="k"></td>
+                    <td colspan="2" id="ec"></td>
+                    <td colspan="2" id="mb"></td>
+                </tr>
+
+                <tr>
+
+                    <th colspan="2">
+                        LIFE SKILLS
+                        <br>
+                        <img
+                            id="cl"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjEq766ZwT_QB8I91NL3V-yk9FlDUAmDvej1K3_ALktL6A_ky1fNnw5xQ&s=10"
+                        >
+                    </th>
+
+                    <th colspan="2">
+                        GENERAL
+                        <br>
+                        SCIENCE
+                        <br>
+                        <img
+                            id="st"
+                            src="https://i.pinimg.com/236x/07/f8/65/07f865308b222f0008effe680e7ff2dd.jpg"
+                        >
+                    </th>
+
+                    <th colspan="2">
+
+                        GENERAL
+                        <br>
+                        MATHEMATICS
+                        <br>
+
+                        <img
+                            id="galit2"
+                            src="https://i.pinimg.com/1200x/93/cb/5d/93cb5d8ee394dc93c6c097cb5f836c93.jpg"
+                        >
+
+                    </th>
+
+                </tr>
+
+                <tr>
+
+                    <td colspan="2" id="ls"></td>
+                    <td colspan="2" id="gs"></td>
+                    <td colspan="2" id="gm"></td>
+
+                </tr>
+
+            </table>
+
+            <img
+                src="./cry.gif"
+                style="margin: 0 auto;"
             >
 
-            <img 
-            src="./galit.gif"
-            id="galit"
-            >
+        </div>
 
-        <table class="ilan" border="1">
+        <main id="todo">
 
-            <tr>
-                <th colspan="3" id="f1">FILIPINO 1</th>
-                <th colspan="3" id="o">OTHERS</th>
-            </tr>
+            <div class="todo-container">
 
-            <tr>
-                <td colspan="3" id="f"></td>
-                <td colspan="3" id="other"></td>
-            </tr>
+                <h1>My To-Do List</h1>
 
-            <tr>    
-                <th colspan="2">
-                    <img
-                    id="h"
-                    src="https://static.wikia.nocookie.net/hellokitty/images/6/6e/Pompompurin2021ranking.png/revision/latest/scale-to-width-down/570?cb=20251026210919"
+                <select id="subject">
+
+                    <option
+                        value=""
+                        disabled
+                        selected
+                        hidden
                     >
-                    KASAYSAYAN
-                </th>
-                <th colspan="2">
-                    <img
-                    id="tc"
-                    src="https://i.pinimg.com/736x/66/eb/22/66eb22c117d2126bc21936ea925b34ea.jpg"
-                    >
-                    <br>
-                    EFFECTIVE
-                    <br>
-                    COMMUNICATION
-                </th>
-                <th colspan="2">
-                    <img
-                    id="talsik"
-                    src="https://media.tenor.com/cZBSaowouvkAAAAj/pompompurin-sanrio.gif"
-                    >
-                    <br>
-                    MABISANG
-                    <br>
-                    KOMUNIKASYON
-                </th>
-            </tr>    
-            
-            <tr>
-                <td colspan="2" id="k"></td>
-                <td colspan="2" id="ec"></td>
-                <td colspan="2" id="mb"></td>
-            </tr>
+                        Select Subjects
+                    </option>
 
-            <tr>
-                <th colspan="2">
-                    LIFE SKILLS
-                    <br>
-                    <img
-                    id="cl"
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjEq766ZwT_QB8I91NL3V-yk9FlDUAmDvej1K3_ALktL6A_ky1fNnw5xQ&s=10"
-                    >
-                </th>
-                <th colspan="2">
-                    GENERAL
-                    <br>
-                    SCIENCE
-                    <br>
-                    <img
-                    id="st"
-                    src="https://i.pinimg.com/236x/07/f8/65/07f865308b222f0008effe680e7ff2dd.jpg"
-                    >
-                </th>
-                <th colspan="2">
-                    GENERAL
-                    <br>
-                    MATHEMATICS
-                    <br>
-                    <img 
-                    id="galit2"
-                    src="https://i.pinimg.com/1200x/93/cb/5d/93cb5d8ee394dc93c6c097cb5f836c93.jpg"
-                    >
-                </th>
-            </tr>
+                    <option value="Filipino 1">
+                        Filipino 1
+                    </option>
 
-            <tr>
-                <td colspan="2" id="ls"></td>
-                <td colspan="2" id="gs"></td>
-                <td colspan="2" id="gm"></td>
-            </tr>
-            
-        </table>
+                    <option value="Kasaysayan">
+                        Kasaysayan
+                    </option>
 
-        <img 
-        src="./cry.gif"
-        style="margin: 0 auto;"
-        >
+                    <option value="Effective Communication">
+                        Effective Communication
+                    </option>
 
-    </div>
-            
-            <main id="todo">
+                    <option value="Mabisang Komunikasyon">
+                        Mabisang Komunikasyon
+                    </option>
 
-                <div class="todo-container">
+                    <option value="Life Skills">
+                        Life Skills
+                    </option>
 
+                    <option value="General Science">
+                        General Science
+                    </option>
 
-                    <h1>My To-Do List</h1>
+                    <option value="General Mathematics">
+                        General Mathematics
+                    </option>
 
-                    <select id="subject">
-                        <option value="" disabled selected hidden>Select Subjects</option>
-                        <option value="Filipino 1">Filipino 1</option>
-                        <option value="Kasaysayan">Kasaysayan</option>
-                        <option value="Effective Communication">Effective Communication</option>
-                        <option value="Mabisang Komunikasyon">Mabisang Komunikasyon</option>
-                        <option value="Life Skills">Life Skills</option>
-                        <option value="General Science">General Science</option>
-                        <option value="General Mathematics">General Mathematics</option>
-                        <option value="Others">Others</option>
-                    </select>
+                    <option value="Others">
+                        Others
+                    </option>
+
+                </select>
+
+                <input
+                    type="text"
+                    id="ti"
+                    placeholder="Enter a task..."
+                >
+
+                <div class="datetime">
 
                     <input
-                        type="text"
-                        id="ti"
-                        placeholder="Enter a task..."
+                        type="date"
+                        id="date"
                     >
 
-                    <button id="add">Add Task</button>
+                    <input
+                        type="time"
+                        id="time"
+                    >
 
-                    <ul id="tl"></ul>
                 </div>
-                    
-            <img 
-            id="squishy"
-            src="./squishy.png"
+
+                <button id="add">
+                    Add Task
+                </button>
+
+                <ul id="tl"></ul>
+
+            </div>
+
+            <img
+                id="squishy"
+                src="./squishy.png"
             >
 
-            </main>
+        </main>
 
-        </section>
+    </section>
+
 <script>
 
     const ti = document.getElementById("ti");
     const add = document.getElementById("add");
+    const subject = document.getElementById("subject");
+    const date = document.getElementById("date");
+    const time = document.getElementById("time");
+
 
     let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
 
     function save() {
         localStorage.setItem("tasks", JSON.stringify(tasks));
@@ -671,173 +744,219 @@
 
     function addTask() {
 
-        const subject =
-            document.getElementById("subject").value;
+        const selectedSubject = subject.value;
+        const text = ti.value.trim();
+        const taskDate = date.value;
+        const taskTime = time.value;
 
-        const text =
-            ti.value.trim();
-
-        if (
-            subject === "" ||
-            text === ""
-        ) {
-            alert("Please complete all fields.");
+        if (selectedSubject === "") {
+            alert("Please select a subject.");
             return;
         }
 
+        if (text === "") {
+            return;
+        }
+
+
         tasks.push({
-            subject: subject,
+
+            subject: selectedSubject,
+
             text: text,
+
+            date: taskDate,
+
+            time: taskTime,
+
             completed: false
+
         });
+
 
         save();
 
-        document.getElementById("subject").value = "";
+
+        subject.value = "";
+
         ti.value = "";
 
+        date.value = "";
+
+        time.value = "";
+
+
         updateTable();
+
         displayTasks();
+
     }
+
 
     function displayTasks() {
 
-        const tl = document.getElementById("tl");
+        const tl =
+            document.getElementById("tl");
+
 
         tl.innerHTML = "";
 
-        tasks.forEach((task, index) => {
 
-            const li = document.createElement("li");
+        tasks.forEach(
+            (task, index) => {
 
-            li.innerHTML = `
-                <div class="task-info">
-                    <strong>${task.text}</strong>
-                    <small>📚 ${task.subject}</small>
+                const li =
+                    document.createElement("li");
 
-                </div>
 
-                <button class="del">Delete</button>
-            `;
+                li.innerHTML = `
 
-            const deleteButton =
-                li.querySelector(".del");
+                    <div class="task-info">
 
-            deleteButton.addEventListener("click", function () {
+                        <strong>
+                            ${task.text}
+                        </strong>
 
-                tasks.splice(index, 1);
+                        <small>
+                            📚 ${task.subject}
+                        </small>
 
-                save();
+                        ${
+                            task.date
+                            ? `<small>📅 ${task.date}</small>`
+                            : ""
+                        }
 
-                displayTasks();
-                updateTable();
-            });
+                        ${
+                            task.time
+                            ? `<small>⏰ ${task.time}</small>`
+                            : ""
+                        }
 
-            tl.appendChild(li);
-        });
+                    </div>
+
+                    <button class="del">
+                        Delete
+                    </button>
+
+                `;
+
+                const deleteButton =
+                    li.querySelector(".del");
+
+                deleteButton.addEventListener(
+                    "click",
+                    function() {
+
+                        tasks.splice(
+                            index,
+                            1
+                        );
+
+                        save();
+                        displayTasks();
+                        updateTable();
+                    }
+                );
+                tl.appendChild(li);
+            }
+        );
     }
 
     function updateTable() {
 
         const cells = {
+            "Filipino 1": document.getElementById("f"),
+            "Kasaysayan": document.getElementById("k"),
+            "Effective Communication": document.getElementById("ec"),
+            "Mabisang Komunikasyon": document.getElementById("mb"),
+            "Life Skills": document.getElementById("ls"),
+            "General Science": document.getElementById("gs"),
+            "General Mathematics": document.getElementById("gm"),
+            "Others": document.getElementById("other")
 
-            "Filipino 1":
-                document.getElementById("f"),
-
-            "Kasaysayan":
-                document.getElementById("k"),
-
-            "Effective Communication":
-                document.getElementById("ec"),
-
-            "Mabisang Komunikasyon":
-                document.getElementById("mb"),
-
-            "Life Skills":
-                document.getElementById("ls"),
-
-            "General Science":
-                document.getElementById("gs"),
-
-            "General Mathematics":
-                document.getElementById("gm"),
-            "Others":
-                document.getElementById("other")
         };
 
-        Object.values(cells).forEach(cell => {
-
-            cell.innerHTML =
-                `<span class="none">None</span>`;
-
-        });
-
-        tasks.forEach(task => {
-
-            const cell = cells[task.subject];
-
-            if (!cell) return;
-
-            if (cell.querySelector(".none")) {
-                cell.innerHTML = "";
+        Object.values(cells).forEach(
+            cell => {
+                cell.innerHTML =
+                    `<span class="none">None</span>`;
             }
+        );
 
-            const taskDiv =
-                document.createElement("div");
+        tasks.forEach(
+            task => {
 
-            taskDiv.classList.add("table-task");
+                const cell =
+                    cells[task.subject];
+                
+                if (!cell) {
+                    return;
+                }
 
-            taskDiv.innerHTML = `
-                <strong>${task.text}</strong>
-            `;
 
-            cell.appendChild(taskDiv);
+                if (
+                    cell.querySelector(".none")
+                ) {
+                    cell.innerHTML = "";
+                }
 
-        });
-    }
 
-    const page1 =
-        document.getElementById("page1");
+                const taskDiv = document.createElement("div");
 
-    const page2 =
-        document.getElementById("todo");
+                taskDiv.classList.add("table-task");
 
-    const btn1 =
-        document.getElementById("btn1");
+                taskDiv.innerHTML = `
 
-    const btn2 =
-        document.getElementById("btn2");
+                    <strong>${task.text}</strong>
 
-    btn1.addEventListener(
-        "click",
-        function(event) {
+                    ${
+                        task.date
+                        ? `<small>📅 ${task.date}</small>`
+                        : ""
+                    }
 
+                    ${
+                        task.time
+                        ? `<small>⏰ ${task.time}</small>`
+                        : ""
+                    }
+                `;
+
+
+                cell.appendChild(taskDiv);
+
+            });
+        }
+
+
+    /* PAGE SWITCHING */
+
+    const page1 = document.getElementById("page1");
+    const page2 = document.getElementById("todo");
+    const btn1 = document.getElementById("btn1");
+    const btn2 = document.getElementById("btn2");
+
+    btn1.addEventListener("click", function(event) {
             event.preventDefault();
 
             page2.style.display = "none";
 
             page1.style.display = "flex";
+        });
 
-        }
-    );
-
-
-    btn2.addEventListener(
-        "click",
-        function(event) {
-
+    btn2.addEventListener("click", function(event) {
             event.preventDefault();
 
             page1.style.display = "none";
 
             page2.style.display = "flex";
 
-        }
-    );
-
+        });
+    
     function showRandomTitle(element) {
-
         const titles = [
+
             "GOOO YOU CAN DO IT!!!!",
             "Hello there!",
             "Ansipag mo naman yah",
@@ -849,40 +968,71 @@
             "YOOOOOOOOOOWWWWWWWWW",
             "Palo magaaral ulit",
             "ano na sah",
-            "simulan mo na dapat mong simulan boi",
+            "simulan mo na dapat mong simulan boi"
         ];
 
         const randomIndex =
             Math.floor(
-                Math.random() * titles.length
+                Math.random() *
+                titles.length
             );
 
-        alert("Pompompurin says: " + titles[randomIndex]);
+        alert(
+            "Pompompurin says: " +
+            titles[randomIndex]
+        );
     }
 
-    const sched = document.querySelector(".sched");
+    const sched =
+        document.querySelector(".sched");
 
-    sched.addEventListener("click", function() {
-        sched.classList.toggle("zoomed");
-    });
+    sched.addEventListener(
+        "click",
+        function() {
 
+            sched.classList.toggle(
+                "zoomed"
+            );
 
+        }
+    );
 
     updateTable();
     displayTasks();
 
 
-if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-        navigator.serviceWorker.register("./offline.js")
-            .then((registration) => {
-                console.log("Service Worker registered!", registration.scope);
-            })
-            .catch((error) => {
-                console.error("Service Worker registration failed:", error);
+    if (
+        "serviceWorker" in navigator
+    ) {
+
+        window.addEventListener(
+            "load",
+            () => {
+
+                navigator.serviceWorker
+                    .register("./offline.js")
+
+                    .then(
+                        (registration) => {
+
+                            console.log(
+                                "Service Worker registered!",
+                                registration.scope
+                            );
+                        }
+                    )
+                    .catch(
+                        (error) => {
+
+                            console.error(
+                                "Service Worker registration failed:",
+                                error
+                            );
+                        });
             });
-    });
-}
+        }
+
 </script>
+
 </body>
 </html>
